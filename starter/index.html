@@ -7,7 +7,7 @@
   <meta name="description" content="Green Ridge Lawn & Landscape — reliable mowing, edging, and yard cleanup. Serving Cedar Hollow and surrounding areas." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --forest: #2D5016;
@@ -15,192 +15,365 @@
       --cream: #F5F0E8;
       --gold: #C9A84C;
       --forest-dark: #20380F;
+      --forest-light: #3d6b20;
+      --warm-white: #FDFAF4;
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       font-family: 'Lato', sans-serif;
-      background: var(--cream);
+      background: var(--warm-white);
       color: var(--forest-dark);
       line-height: 1.65;
+      overflow-x: hidden;
     }
     h1, h2, h3 { font-family: 'Playfair Display', serif; }
 
+    /* Demo tag */
     .demo-tag {
       background: var(--earth);
       color: var(--cream);
       text-align: center;
-      font-size: 0.8rem;
-      letter-spacing: 1px;
-      padding: 6px;
+      font-size: 0.78rem;
+      letter-spacing: 1.5px;
+      padding: 7px;
       text-transform: uppercase;
     }
 
-    /* ---- Nav ---- */
+    /* Nav */
     nav {
       background: var(--forest);
       color: var(--cream);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 24px;
+      padding: 18px 32px;
       position: sticky;
       top: 0;
       z-index: 50;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.2);
     }
     nav .logo {
       font-family: 'Playfair Display', serif;
       font-weight: 700;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
     }
-    nav .logo .accent { color: var(--gold); }
-    nav ul { list-style: none; display: flex; gap: 26px; }
-    nav a { color: var(--cream); text-decoration: none; font-weight: 400; transition: color 0.2s; }
+    nav .logo .accent { color: var(--gold); font-style: italic; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav a { color: rgba(245,240,232,0.85); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.5px; transition: color 0.2s; }
     nav a:hover { color: var(--gold); }
-    @media (max-width: 640px) {
-      nav ul { display: none; }
-    }
+    @media (max-width: 640px) { nav ul { display: none; } }
 
-    /* ---- Hero ---- */
+    /* Hero */
     .hero {
-      background: linear-gradient(160deg, var(--forest) 0%, var(--forest-dark) 100%);
+      background: var(--forest);
       color: var(--cream);
-      text-align: center;
-      padding: 90px 24px 120px;
       position: relative;
       overflow: hidden;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+    }
+    /* subtle texture overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(61,107,32,0.5) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 40px 140px;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; padding: 60px 24px 120px; }
+    }
+    .hero-text {}
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(201,168,76,0.2);
+      border: 1px solid rgba(201,168,76,0.5);
+      color: var(--gold);
+      font-size: 0.78rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
     }
     .hero h1 {
-      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
       font-weight: 900;
-      line-height: 1.1;
+      line-height: 1.08;
+      margin-bottom: 20px;
     }
-    .hero h1 .accent { color: var(--gold); }
-    .hero p {
-      margin: 20px auto 32px;
-      max-width: 560px;
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
       font-weight: 300;
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      opacity: 0.92;
+      opacity: 0.88;
+      max-width: 420px;
+      margin-bottom: 36px;
+      line-height: 1.7;
     }
-    .hero .btn {
+    @media (max-width: 768px) { .hero-sub { margin: 0 auto 36px; } }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    @media (max-width: 768px) { .hero-actions { justify-content: center; } }
+    .btn-primary {
       display: inline-block;
       background: var(--gold);
       color: var(--forest-dark);
-      padding: 14px 34px;
+      padding: 14px 32px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .hero .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(0,0,0,0.25); }
-    .mower {
-      width: min(320px, 70vw);
-      margin: 38px auto 0;
-      display: block;
-      opacity: 0.95;
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.25); }
+    .btn-ghost {
+      display: inline-block;
+      border: 1.5px solid rgba(245,240,232,0.4);
+      color: var(--cream);
+      padding: 13px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, background 0.2s;
     }
-    .hero::after {
-      content: "";
+    .btn-ghost:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
+
+    /* Hero illustration */
+    .hero-visual {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      position: relative;
+    }
+    .hero-visual svg { width: 100%; max-width: 420px; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); }
+
+    /* Grass wave divider */
+    .wave-divider {
       position: absolute;
       bottom: -1px; left: 0; right: 0;
-      height: 50px;
+      height: 64px;
       background-repeat: repeat-x;
-      background-size: 70px 50px;
-      background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='50'%3E%3Cpath d='M0 50 Q9 8 18 50 Q26 4 35 50 Q44 12 52 50 Q61 6 70 50 Z' fill='%23F5F0E8'/%3E%3C/svg%3E");
+      background-size: 80px 64px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='64'%3E%3Cpath d='M0 64 Q10 10 20 64 Q30 6 40 64 Q50 14 60 64 Q70 8 80 64 Z' fill='%23FDFAF4'/%3E%3C/svg%3E");
     }
 
-    /* ---- Sections ---- */
-    section { padding: 70px 24px; }
-    .section-head { text-align: center; margin-bottom: 48px; }
+    /* Trust bar */
+    .trust-bar {
+      background: var(--forest-dark);
+      padding: 18px 24px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      color: rgba(245,240,232,0.75);
+      font-size: 0.82rem;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trust-item .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+    /* Services */
+    .services {
+      padding: 90px 24px;
+      background: var(--warm-white);
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 54px;
+    }
+    .section-head .lead {
+      color: var(--earth);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
     .section-head h2 {
       color: var(--forest);
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      margin-bottom: 12px;
     }
-    .section-head .lead { color: var(--earth); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.85rem; }
-    .section-head p { color: #5a5244; max-width: 580px; margin: 12px auto 0; }
+    .section-head p { color: #6b6050; max-width: 520px; margin: 0 auto; }
 
-    .services { background: var(--cream); }
     .service-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 28px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      max-width: 1020px;
       margin: 0 auto;
     }
     .service-card {
       background: #fff;
-      border-radius: 14px;
-      padding: 36px 28px;
-      text-align: center;
-      box-shadow: 0 8px 24px rgba(45,80,22,0.10);
-      border-bottom: 4px solid var(--gold);
-      transition: transform 0.25s;
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(45,80,22,0.08), 0 1px 4px rgba(45,80,22,0.06);
+      transition: transform 0.28s, box-shadow 0.28s;
+      border: 1px solid rgba(45,80,22,0.07);
     }
-    .service-card:hover { transform: translateY(-6px); }
-    .service-card .icon {
-      width: 60px; height: 60px; margin: 0 auto 18px;
-      background: var(--forest);
-      border-radius: 50%;
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--forest), var(--gold));
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 48px rgba(45,80,22,0.14);
+    }
+    .service-card .icon-wrap {
+      width: 64px; height: 64px;
+      background: linear-gradient(135deg, var(--forest), var(--forest-light));
+      border-radius: 16px;
       display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 16px rgba(45,80,22,0.25);
     }
-    .service-card .icon svg { width: 32px; height: 32px; }
-    .service-card h3 { color: var(--forest); font-size: 1.4rem; margin-bottom: 10px; }
-    .service-card p { color: #5a5244; font-size: 0.96rem; }
+    .service-card .icon-wrap svg { width: 34px; height: 34px; }
+    .service-card h3 {
+      color: var(--forest);
+      font-size: 1.45rem;
+      margin-bottom: 10px;
+    }
+    .service-card p { color: #6b6050; font-size: 0.96rem; line-height: 1.65; }
+    .service-card .card-tag {
+      display: inline-block;
+      margin-top: 18px;
+      background: rgba(45,80,22,0.08);
+      color: var(--forest);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
 
-    /* ---- Contact ---- */
-    .contact { background: var(--forest); color: var(--cream); }
-    .contact .section-head h2 { color: var(--cream); }
-    .contact .section-head .lead { color: var(--gold); }
-    .contact-grid {
+    /* Why us strip */
+    .why-strip {
+      background: linear-gradient(135deg, var(--forest), var(--forest-dark));
+      padding: 60px 24px;
+      color: var(--cream);
+    }
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 26px;
-      max-width: 880px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 32px;
+      max-width: 860px;
       margin: 0 auto;
       text-align: center;
     }
-    .contact-item {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(201,168,76,0.4);
-      border-radius: 12px;
-      padding: 30px 22px;
+    .why-item .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
     }
-    .contact-item .icon { width: 44px; height: 44px; margin: 0 auto 14px; }
-    .contact-item h3 { color: var(--gold); font-size: 1.2rem; margin-bottom: 8px; }
-    .contact-item a, .contact-item p { color: var(--cream); text-decoration: none; font-weight: 300; }
-    .contact-item a:hover { color: var(--gold); }
+    .why-item .label {
+      font-size: 0.9rem;
+      font-weight: 300;
+      opacity: 0.85;
+      margin-top: 6px;
+    }
 
+    /* Contact */
+    .contact {
+      padding: 90px 24px;
+      background: var(--cream);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: #fff;
+      border: 1px solid rgba(45,80,22,0.1);
+      border-radius: 14px;
+      padding: 32px 24px;
+      text-align: center;
+      transition: transform 0.22s, box-shadow 0.22s;
+    }
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(45,80,22,0.12); }
+    .contact-card .icon-circle {
+      width: 52px; height: 52px;
+      background: var(--forest);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .contact-card .icon-circle svg { width: 26px; height: 26px; }
+    .contact-card h3 { color: var(--forest); font-size: 1.1rem; margin-bottom: 6px; }
+    .contact-card a, .contact-card p { color: #6b6050; text-decoration: none; font-size: 0.95rem; }
+    .contact-card a:hover { color: var(--forest); }
+
+    /* Footer */
     footer {
       background: var(--forest-dark);
       color: var(--cream);
       text-align: center;
-      padding: 28px 20px;
+      padding: 32px 20px;
       font-size: 0.85rem;
       font-weight: 300;
     }
     footer .accent { color: var(--gold); }
     footer a { color: var(--gold); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
 
-    /* ---- Fade-in ---- */
+    /* Animations */
     .reveal {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateY(28px);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
     .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
     @media (prefers-reduced-motion: reduce) {
       .reveal { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
 <body>
+
   <div class="demo-tag">Starter Tier Demo · Green Ridge Lawn &amp; Landscape</div>
 
   <nav>
-    <div class="logo">Green Ridge <span class="accent">L&amp;L</span></div>
+    <div class="logo">Green Ridge <span class="accent">L&L</span></div>
     <ul>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -209,76 +382,186 @@
   </nav>
 
   <header class="hero">
-    <h1>A Yard You'll Be <span class="accent">Proud</span> Of</h1>
-    <p>Dependable mowing, crisp edging, and seasonal cleanup from your neighborhood lawn care crew.</p>
-    <a class="btn" href="#contact">Get a Free Estimate</a>
-    <svg class="mower" viewBox="0 0 320 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- grass line -->
-      <path d="M0 150 Q15 120 30 150 Q45 116 60 150 Q75 122 90 150 Q105 114 120 150 Q135 124 150 150 Q165 118 180 150 Q195 122 210 150 Q225 116 240 150 Q255 124 270 150 Q285 118 300 150 Q310 124 320 150 Z" fill="#C9A84C" opacity="0.55"/>
-      <!-- mower silhouette -->
-      <g fill="#F5F0E8">
-        <path d="M70 120 L70 92 L150 92 L150 120 Z"/>
-        <path d="M150 100 L150 86 L210 86 L210 100 Z"/>
-        <rect x="205" y="40" width="10" height="60" transform="rotate(20 210 70)"/>
-        <rect x="232" y="34" width="34" height="10" rx="4"/>
-        <circle cx="92" cy="124" r="18"/>
-        <circle cx="178" cy="124" r="13"/>
-      </g>
-      <circle cx="92" cy="124" r="8" fill="#2D5016"/>
-      <circle cx="178" cy="124" r="6" fill="#2D5016"/>
-    </svg>
+    <div class="hero::before"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Cedar Hollow's Trusted Lawn Crew</div>
+        <h1>A Yard You'll Be <em>Proud</em> Of</h1>
+        <p class="hero-sub">Dependable mowing, crisp edging, and seasonal cleanup — done right every visit, rain or shine.</p>
+        <div class="hero-actions">
+          <a class="btn-primary" href="#contact">Get a Free Estimate</a>
+          <a class="btn-ghost" href="#services">Our Services</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- sky gradient background -->
+          <defs>
+            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4a7a2a" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#2D5016" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="groundGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#4a7a2a"/>
+              <stop offset="100%" stop-color="#20380F"/>
+            </linearGradient>
+          </defs>
+          <!-- ground -->
+          <ellipse cx="200" cy="270" rx="190" ry="22" fill="url(#groundGrad)"/>
+          <!-- grass blades -->
+          <g fill="#5a9a30" opacity="0.7">
+            <path d="M30 248 Q32 220 35 248"/>
+            <path d="M44 248 Q47 215 50 248"/>
+            <path d="M58 248 Q61 225 64 248"/>
+            <path d="M340 248 Q342 218 345 248"/>
+            <path d="M354 248 Q356 212 359 248"/>
+            <path d="M368 248 Q370 222 373 248"/>
+          </g>
+          <!-- mower body -->
+          <rect x="130" y="195" width="140" height="50" rx="8" fill="#F5F0E8"/>
+          <!-- mower deck -->
+          <rect x="115" y="210" width="170" height="20" rx="6" fill="#E8E2D4"/>
+          <!-- engine box -->
+          <rect x="190" y="175" width="55" height="28" rx="6" fill="#F5F0E8"/>
+          <!-- handle bar -->
+          <rect x="238" y="155" width="8" height="50" rx="4" fill="#d4cec0" transform="rotate(-8 242 175)"/>
+          <rect x="248" y="148" width="38" height="8" rx="4" fill="#d4cec0"/>
+          <!-- wheels -->
+          <circle cx="155" cy="252" r="22" fill="#3d3528"/>
+          <circle cx="155" cy="252" r="14" fill="#555"/>
+          <circle cx="155" cy="252" r="6" fill="#C9A84C"/>
+          <circle cx="245" cy="252" r="18" fill="#3d3528"/>
+          <circle cx="245" cy="252" r="11" fill="#555"/>
+          <circle cx="245" cy="252" r="5" fill="#C9A84C"/>
+          <!-- grass stripe cut path -->
+          <rect x="0" y="248" width="115" height="8" fill="#3d6b20" opacity="0.6" rx="2"/>
+          <!-- stripes in cut grass -->
+          <rect x="10" y="248" width="95" height="4" fill="#4a7a2a" opacity="0.4"/>
+          <!-- exhaust/detail lines -->
+          <circle cx="207" cy="188" r="3" fill="#C9A84C"/>
+          <circle cx="218" cy="188" r="3" fill="#C9A84C"/>
+          <circle cx="229" cy="188" r="3" fill="#C9A84C"/>
+          <!-- sun rays subtle -->
+          <circle cx="340" cy="60" r="40" fill="#C9A84C" opacity="0.12"/>
+          <circle cx="340" cy="60" r="26" fill="#C9A84C" opacity="0.15"/>
+          <circle cx="340" cy="60" r="14" fill="#C9A84C" opacity="0.2"/>
+        </svg>
+      </div>
+    </div>
+    <div class="wave-divider"></div>
   </header>
+
+  <div class="trust-bar">
+    <div class="trust-item"><span class="dot"></span> Local & Family-Owned</div>
+    <div class="trust-item"><span class="dot"></span> Free Estimates</div>
+    <div class="trust-item"><span class="dot"></span> Insured & Reliable</div>
+    <div class="trust-item"><span class="dot"></span> Cedar Hollow Area</div>
+  </div>
 
   <section class="services" id="services">
     <div class="section-head reveal">
       <div class="lead">What We Do</div>
       <h2>Our Core Services</h2>
-      <p>Straightforward, reliable lawn care — done right every visit.</p>
+      <p>Straightforward, reliable lawn care — done right every visit, no surprises.</p>
     </div>
     <div class="service-grid">
-      <div class="service-card reveal">
-        <div class="icon">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 24h18v3H3zM5 24v-6h4v6M11 24v-9h4v9" stroke="#C9A84C" stroke-width="2.4"/><circle cx="7" cy="27" r="2.5" fill="#C9A84C"/><circle cx="17" cy="27" r="2" fill="#C9A84C"/><path d="M21 18l5-6h3" stroke="#C9A84C" stroke-width="2.4"/></svg>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 25h19v3H3zM5 25v-6h4v6M11 25v-9h4v9" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round"/>
+            <circle cx="8" cy="29" r="2.5" fill="#C9A84C"/>
+            <circle cx="17" cy="29" r="2" fill="#C9A84C"/>
+            <path d="M22 19l5-7h3" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
         </div>
         <h3>Mowing</h3>
         <p>Clean, even cuts on a schedule that fits your yard — weekly or biweekly with crisp results every time.</p>
+        <span class="card-tag">Included in Starter</span>
       </div>
-      <div class="service-card reveal">
-        <div class="icon">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 22h24" stroke="#C9A84C" stroke-width="2.4"/><path d="M6 22v-4M10 22v-7M14 22v-5M18 22v-8M22 22v-4M26 22v-6" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/></svg>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 22h26" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M7 22v-5M11 22v-8M15 22v-6M19 22v-9M23 22v-5M27 22v-7" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
         </div>
         <h3>Edging</h3>
         <p>Sharp, defined borders along walks, drives, and beds that make the whole property look manicured.</p>
+        <span class="card-tag">Included in Starter</span>
       </div>
-      <div class="service-card reveal">
-        <div class="icon">
-          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 4v14M16 18l-5-4M16 18l5-4" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round"/><path d="M6 22l3 6h14l3-6" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17 5v15M17 20l-5-5M17 20l5-5" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 24l3 5h14l3-5" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/>
+          </svg>
         </div>
         <h3>Cleanup</h3>
         <p>Spring and fall leaf removal, debris hauling, and bed tidying to keep your yard looking its best year-round.</p>
+        <span class="card-tag">Included in Starter</span>
       </div>
+
     </div>
   </section>
+
+  <!-- Why us numbers strip -->
+  <div class="why-strip">
+    <div class="why-grid">
+      <div class="why-item reveal">
+        <div class="num">500+</div>
+        <div class="label">Lawns Serviced</div>
+      </div>
+      <div class="why-item reveal reveal-delay-1">
+        <div class="num">5★</div>
+        <div class="label">Local Reputation</div>
+      </div>
+      <div class="why-item reveal reveal-delay-2">
+        <div class="num">10+</div>
+        <div class="label">Years in Cedar Hollow</div>
+      </div>
+      <div class="why-item reveal reveal-delay-3">
+        <div class="num">Free</div>
+        <div class="label">Estimates Always</div>
+      </div>
+    </div>
+  </div>
 
   <section class="contact" id="contact">
     <div class="section-head reveal">
       <div class="lead">Get In Touch</div>
       <h2>Ready When You Are</h2>
-      <p>Call, email, or stop by — we'd love to put together a free estimate for your property.</p>
+      <p>Call or email — we'd love to put together a free estimate for your property.</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-item reveal">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 8c-2 0-4 2-4 4 0 12 12 24 24 24 2 0 4-2 4-4v-5l-7-3-3 4c-4-2-8-6-10-10l4-3-3-7z" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      <div class="contact-card reveal reveal-delay-1">
+        <div class="icon-circle">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 5c-1.5 0-3 1.5-3 3 0 9 9 18 18 18 1.5 0 3-1.5 3-3v-4l-5-2-2 3c-3-1.5-6-4.5-7.5-7.5l3-2-2-5z" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+          </svg>
+        </div>
         <h3>Call Us</h3>
         <a href="tel:+15551234567">(555) 123-4567</a>
       </div>
-      <div class="contact-item reveal">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="11" width="32" height="22" rx="3" stroke="#C9A84C" stroke-width="2.4"/><path d="M7 13l15 11 15-11" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg>
+      <div class="contact-card reveal reveal-delay-2">
+        <div class="icon-circle">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="6" width="20" height="14" rx="2" stroke="#C9A84C" stroke-width="2"/>
+            <path d="M4 8l9 6.5L22 8" stroke="#C9A84C" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
         <h3>Email Us</h3>
         <a href="mailto:hello@greenridgelawn.com">hello@greenridgelawn.com</a>
       </div>
-      <div class="contact-item reveal">
-        <svg class="icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c-7 0-12 5-12 12 0 9 12 20 12 20s12-11 12-20c0-7-5-12-12-12z" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/><circle cx="22" cy="18" r="4" stroke="#C9A84C" stroke-width="2.4"/></svg>
+      <div class="contact-card reveal reveal-delay-3">
+        <div class="icon-circle">
+          <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 3c-4.5 0-8 3.5-8 8 0 6 8 13 8 13s8-7 8-13c0-4.5-3.5-8-8-8z" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="13" cy="11" r="3" stroke="#C9A84C" stroke-width="2"/>
+          </svg>
+        </div>
         <h3>Service Area</h3>
         <p>Cedar Hollow &amp; nearby</p>
       </div>
@@ -303,7 +586,7 @@
             io.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.15 });
+      }, { threshold: 0.12 });
       els.forEach(function (el) { io.observe(el); });
     })();
   </script>
