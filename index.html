@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Ridge Lawn &amp; Landscape — Demo Selector</title>
+  <meta name="description" content="Choose a demo tier — Starter, Standard, or Premium — for Green Ridge Lawn & Landscape." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest: #2D5016;
+      --earth: #8B6914;
+      --cream: #F5F0E8;
+      --gold: #C9A84C;
+      --forest-dark: #20380F;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--cream);
+      color: var(--forest-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    /* ---- Header / hero ---- */
+    .topbar {
+      background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+      color: var(--cream);
+      text-align: center;
+      padding: 70px 20px 90px;
+      position: relative;
+      overflow: hidden;
+    }
+    .topbar::after {
+      content: "";
+      position: absolute;
+      bottom: -1px; left: 0; right: 0;
+      height: 60px;
+      background-repeat: repeat-x;
+      background-size: 80px 60px;
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='60'%3E%3Cpath d='M0 60 Q10 10 20 60 Q30 5 40 60 Q50 15 60 60 Q70 8 80 60 Z' fill='%23F5F0E8'/%3E%3C/svg%3E");
+    }
+    .brand-mark {
+      width: 64px; height: 64px;
+      margin: 0 auto 18px;
+      display: block;
+    }
+    .topbar h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
+    .topbar .accent { color: var(--gold); }
+    .topbar p {
+      margin-top: 14px;
+      font-weight: 300;
+      font-size: clamp(1rem, 2.4vw, 1.25rem);
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.92;
+    }
+
+    /* ---- Cards ---- */
+    main {
+      flex: 1;
+      max-width: 1100px;
+      margin: -40px auto 0;
+      padding: 0 24px 60px;
+      position: relative;
+      z-index: 2;
+    }
+    .intro {
+      text-align: center;
+      margin: 50px 0 40px;
+    }
+    .intro h2 {
+      color: var(--forest);
+      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+    }
+    .intro p { color: #5a5244; max-width: 620px; margin: 12px auto 0; }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(45, 80, 22, 0.12);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-top: 6px solid var(--gold);
+    }
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 45px rgba(45, 80, 22, 0.22);
+    }
+    .card-top {
+      padding: 34px 28px 24px;
+      text-align: center;
+      background: var(--cream);
+      border-bottom: 1px solid #e7ded0;
+    }
+    .tier-icon { width: 56px; height: 56px; margin-bottom: 14px; }
+    .card h3 {
+      color: var(--forest);
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+    }
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--earth);
+    }
+    .price span { font-size: 0.85rem; font-weight: 400; color: #8a8170; }
+    .card-body { padding: 24px 28px; flex: 1; }
+    .card-body ul { list-style: none; }
+    .card-body li {
+      padding: 7px 0 7px 26px;
+      position: relative;
+      font-size: 0.96rem;
+      border-bottom: 1px dashed #ece4d6;
+    }
+    .card-body li:last-child { border-bottom: none; }
+    .card-body li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .card-cta {
+      margin: 0 28px 28px;
+      text-align: center;
+      background: var(--forest);
+      color: var(--cream);
+      padding: 13px;
+      border-radius: 10px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: background 0.25s ease;
+    }
+    .card:hover .card-cta { background: var(--gold); color: var(--forest-dark); }
+    .featured { border-top-color: var(--forest); position: relative; }
+    .featured .badge {
+      position: absolute;
+      top: 14px; right: 14px;
+      background: var(--gold);
+      color: var(--forest-dark);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      z-index: 3;
+    }
+
+    footer {
+      background: var(--forest-dark);
+      color: var(--cream);
+      text-align: center;
+      padding: 26px 20px;
+      font-size: 0.85rem;
+      font-weight: 300;
+    }
+    footer .accent { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <svg class="brand-mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M32 6 C20 18 16 30 32 44 C48 30 44 18 32 6 Z" fill="#C9A84C"/>
+      <path d="M32 12 L32 44" stroke="#2D5016" stroke-width="2"/>
+      <path d="M32 58 C24 50 20 44 24 38 C30 42 32 48 32 58 Z" fill="#F5F0E8"/>
+      <path d="M32 58 C40 50 44 44 40 38 C34 42 32 48 32 58 Z" fill="#e9e0d0"/>
+    </svg>
+    <h1>Green Ridge <span class="accent">Lawn &amp; Landscape</span></h1>
+    <p>Three demo websites, one beautiful brand. Pick a tier below to preview exactly what your business could look like online.</p>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h2>Choose a Demo to Explore</h2>
+      <p>Each demo is a fully working website. Click through to see the design, animations, and features that come with every tier.</p>
+    </div>
+
+    <div class="cards">
+      <!-- Starter -->
+      <a class="card" href="starter/">
+        <div class="card-top">
+          <svg class="tier-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="28" cy="28" r="26" fill="#2D5016"/>
+            <path d="M16 34 h24 v6 h-24 Z" fill="#C9A84C"/>
+            <circle cx="20" cy="42" r="4" fill="#F5F0E8"/>
+            <circle cx="36" cy="42" r="4" fill="#F5F0E8"/>
+            <path d="M40 34 v-10 h6 v10" stroke="#F5F0E8" stroke-width="3" fill="none"/>
+          </svg>
+          <h3>Starter</h3>
+          <div class="price">$749 <span>one-time</span></div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Clean single-page design</li>
+            <li>Hero with mower silhouette</li>
+            <li>3 service cards</li>
+            <li>Contact info section</li>
+            <li>Fade-in scroll effects</li>
+          </ul>
+        </div>
+        <div class="card-cta">View Starter Demo →</div>
+      </a>
+
+      <!-- Standard -->
+      <a class="card featured" href="standard/">
+        <span class="badge">Most Popular</span>
+        <div class="card-top">
+          <svg class="tier-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="28" cy="28" r="26" fill="#2D5016"/>
+            <path d="M14 40 q4-14 8 0 q4-16 8 0 q4-14 8 0" stroke="#C9A84C" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M14 40 h28" stroke="#F5F0E8" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <h3>Standard</h3>
+          <div class="price">$1,249 <span>one-time</span></div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Animated grass-blade hero</li>
+            <li>Scroll-triggered cut effects</li>
+            <li>5 service cards with icons</li>
+            <li>Contact form + map embed</li>
+            <li>Testimonials &amp; mobile nav</li>
+          </ul>
+        </div>
+        <div class="card-cta">View Standard Demo →</div>
+      </a>
+
+      <!-- Premium -->
+      <a class="card" href="premium/">
+        <div class="card-top">
+          <svg class="tier-icon" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="28" cy="28" r="26" fill="#2D5016"/>
+            <path d="M28 12 L33 24 L46 24 L35 32 L39 44 L28 36 L17 44 L21 32 L10 24 L23 24 Z" fill="#C9A84C"/>
+          </svg>
+          <h3>Premium</h3>
+          <div class="price">$2,499 <span>one-time</span></div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li>Parallax layered-landscape hero</li>
+            <li>Cinematic scroll animations</li>
+            <li>7 cards with hover flips</li>
+            <li>Before/After slider + carousel</li>
+            <li>SEO schema &amp; sticky nav</li>
+          </ul>
+        </div>
+        <div class="card-cta">View Premium Demo →</div>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 <span class="accent">Green Ridge Lawn &amp; Landscape</span> — Demo presentation. Built for client preview.</p>
+  </footer>
+</body>
+</html>

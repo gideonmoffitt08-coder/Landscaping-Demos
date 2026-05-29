@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Green Ridge Lawn &amp; Landscape | Premium Lawn Care &amp; Landscape Design in Cedar Hollow</title>
+<meta name="description" content="Green Ridge Lawn & Landscape delivers premium lawn care, landscape design, hardscaping, irrigation, and seasonal services in Cedar Hollow. Request your free design consultation today."/>
+<meta name="keywords" content="lawn care, landscaping, landscape design, hardscaping, irrigation, lawn mowing, Cedar Hollow landscaper"/>
+<meta name="author" content="Green Ridge Lawn & Landscape"/>
+<link rel="canonical" href="https://example.com/premium/"/>
+<!-- Open Graph -->
+<meta property="og:type" content="business.business"/>
+<meta property="og:title" content="Green Ridge Lawn & Landscape | Premium Lawn & Landscape Care"/>
+<meta property="og:description" content="Premium lawn care and landscape design in Cedar Hollow. Free design consultations."/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+<!-- LocalBusiness schema markup -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LandscapingBusiness","name":"Green Ridge Lawn & Landscape","image":"https://example.com/premium/og.jpg","@id":"https://example.com/premium/","url":"https://example.com/premium/","telephone":"+1-555-123-4567","priceRange":"$$","address":{"@type":"PostalAddress","streetAddress":"142 Orchard Lane","addressLocality":"Cedar Hollow","addressRegion":"OH","postalCode":"45040","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":39.3370,"longitude":-84.2630},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"14:00"}],"sameAs":["https://www.facebook.com/greenridgelawn","https://www.instagram.com/greenridgelawn"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":"187"}}
+</script>
+<style>
+:root{--forest:#2D5016;--earth:#8B6914;--cream:#F5F0E8;--gold:#C9A84C;--forest-dark:#20380F}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--forest-dark);line-height:1.65;overflow-x:hidden}
+h1,h2,h3{font-family:'Playfair Display',serif}
+.demo-tag{background:var(--earth);color:var(--cream);text-align:center;font-size:.8rem;letter-spacing:1px;padding:6px;text-transform:uppercase}
+/* sticky nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:20px 30px;transition:background .35s,padding .35s,box-shadow .35s;background:transparent}
+nav.scrolled{background:var(--forest);padding:12px 30px;box-shadow:0 4px 20px rgba(0,0,0,.25)}
+nav .logo{font-family:'Playfair Display',serif;font-weight:700;font-size:1.35rem;color:var(--cream)}
+nav .logo .accent{color:var(--gold)}
+nav ul{list-style:none;display:flex;gap:28px;align-items:center}
+nav a{color:var(--cream);text-decoration:none;font-weight:400;transition:color .2s}
+nav a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--forest-dark)!important;padding:9px 20px;border-radius:7px;font-weight:700}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:var(--cream);border-radius:2px;transition:.3s}
+nav.open .hamburger span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+nav.open .hamburger span:nth-child(2){opacity:0}
+nav.open .hamburger span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media(max-width:820px){.hamburger{display:flex}nav ul{position:absolute;top:100%;left:0;right:0;background:var(--forest-dark);flex-direction:column;gap:0;max-height:0;overflow:hidden;transition:max-height .35s}nav.open ul{max-height:380px}nav ul li{width:100%;text-align:center}nav ul li a{display:block;padding:16px;border-top:1px solid rgba(255,255,255,.08)}.nav-cta{border-radius:0}}
+/* parallax hero */
+.hero{position:relative;height:100vh;min-height:600px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--cream)}
+.layer{position:absolute;left:0;right:0;width:100%;will-change:transform}
+.sky{inset:0;background:linear-gradient(180deg,#7fa86a 0%,#4a7a2a 45%,var(--forest) 100%)}
+.sun{position:absolute;top:12%;left:50%;transform:translateX(-50%);width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#f4e3a1 0%,var(--gold) 70%);box-shadow:0 0 80px 30px rgba(201,168,76,.35)}
+.layer svg{display:block;width:100%;height:auto}
+.l-far{bottom:32%}
+.l-mid{bottom:14%}
+.l-near{bottom:0}
+.hero-content{position:relative;z-index:10;padding:0 24px;transform:translateY(0)}
+.hero-content h1{font-size:clamp(2.4rem,7vw,5rem);font-weight:900;line-height:1.05;text-shadow:0 4px 24px rgba(0,0,0,.35)}
+.hero-content h1 .accent{color:var(--gold)}
+.hero-content p{margin:20px auto 32px;max-width:600px;font-weight:300;font-size:clamp(1.05rem,2.6vw,1.4rem);text-shadow:0 2px 12px rgba(0,0,0,.3)}
+.btn{display:inline-block;background:var(--gold);color:var(--forest-dark);padding:15px 38px;border-radius:8px;text-decoration:none;font-weight:700;letter-spacing:.5px;border:none;cursor:pointer;font-size:1rem;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(0,0,0,.3)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:10;color:var(--cream);font-size:.8rem;letter-spacing:2px;opacity:.85;animation:bob 2s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,8px)}}
+/* sections */
+section{padding:90px 24px;position:relative}
+.wrap{max-width:1140px;margin:0 auto}
+.section-head{text-align:center;margin-bottom:54px}
+.section-head .lead{color:var(--earth);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;font-size:.85rem}
+.section-head h2{color:var(--forest);font-size:clamp(1.9rem,4.5vw,2.9rem)}
+.section-head p{color:#5a5244;max-width:620px;margin:14px auto 0}
+.cut-divider{height:10px;overflow:hidden;position:relative}
+.cut-divider .bar{position:absolute;inset:0;width:0;background:repeating-linear-gradient(90deg,var(--forest) 0 14px,var(--gold) 14px 18px);transition:width 1.2s ease}
+.cut-divider.cut .bar{width:100%}
+/* counters */
+.stats{background:var(--forest);color:var(--cream)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;max-width:1000px;margin:0 auto;text-align:center}
+.stat .num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:var(--gold)}
+.stat .label{font-weight:300;letter-spacing:.5px;margin-top:4px}
+/* services flip cards */
+.services{background:var(--cream)}
+.flip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px}
+.flip{background:transparent;perspective:1200px;height:240px}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.flip:hover .flip-inner,.flip:focus-within .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;text-align:center;box-shadow:0 8px 24px rgba(45,80,22,.12)}
+.flip-front{background:#fff;border-bottom:4px solid var(--gold)}
+.flip-front .icon{width:64px;height:64px;background:var(--forest);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.flip-front .icon svg{width:34px;height:34px}
+.flip-front h3{color:var(--forest);font-size:1.3rem}
+.flip-back{background:linear-gradient(160deg,var(--forest),var(--forest-dark));color:var(--cream);transform:rotateY(180deg)}
+.flip-back h3{color:var(--gold);margin-bottom:10px}
+.flip-back p{font-weight:300;font-size:.95rem}
+/* before/after slider */
+.ba-wrap{max-width:900px;margin:0 auto;position:relative;border-radius:16px;overflow:hidden;box-shadow:0 14px 40px rgba(45,80,22,.2);user-select:none}
+.ba-img{height:440px;position:relative}
+@media(max-width:600px){.ba-img{height:300px}}
+.ba-before{position:absolute;inset:0;background:linear-gradient(160deg,#b8a878 0%,#9a8a5a 40%,#7d6f44 100%)}
+.ba-before::after,.ba-after::after{position:absolute;top:18px;left:18px;background:rgba(0,0,0,.45);color:#fff;padding:6px 14px;border-radius:6px;font-size:.8rem;letter-spacing:1px;font-weight:700}
+.ba-before::after{content:"BEFORE"}
+.ba-after{position:absolute;inset:0;background:linear-gradient(160deg,#6fa83e 0%,#3f7a1f 45%,var(--forest) 100%);clip-path:inset(0 50% 0 0)}
+.ba-after::after{content:"AFTER";left:auto;right:18px}
+.ba-patches{position:absolute;inset:0;opacity:.25;background:radial-gradient(circle at 20% 70%,#000 0 6px,transparent 7px),radial-gradient(circle at 60% 40%,#000 0 5px,transparent 6px),radial-gradient(circle at 80% 80%,#000 0 7px,transparent 8px)}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--gold);cursor:ew-resize;transform:translateX(-2px)}
+.ba-handle .grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;color:var(--forest-dark);font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+/* testimonials carousel */
+.testimonials{background:var(--forest);color:var(--cream)}
+.testimonials .section-head h2{color:var(--cream)}
+.testimonials .section-head .lead{color:var(--gold)}
+.carousel{max-width:760px;margin:0 auto;position:relative;overflow:hidden}
+.track{display:flex;transition:transform .6s ease}
+.slide{min-width:100%;padding:10px 20px;text-align:center}
+.slide .stars{color:var(--gold);font-size:1.3rem;letter-spacing:3px;margin-bottom:16px}
+.slide p{font-weight:300;font-style:italic;font-size:1.2rem;max-width:620px;margin:0 auto 18px}
+.slide .who{font-weight:700;color:var(--gold)}
+.carousel-btns{display:flex;justify-content:center;gap:14px;margin-top:26px}
+.carousel-btns button{background:transparent;border:2px solid var(--gold);color:var(--gold);width:44px;height:44px;border-radius:50%;cursor:pointer;font-size:1.1rem;transition:.2s}
+.carousel-btns button:hover{background:var(--gold);color:var(--forest-dark)}
+.dots{display:flex;justify-content:center;gap:9px;margin-top:18px}
+.dots span{width:11px;height:11px;border-radius:50%;background:rgba(255,255,255,.3);cursor:pointer;transition:.2s}
+.dots span.active{background:var(--gold)}
+/* quote form */
+.quote{background:var(--cream)}
+.quote-form{max-width:760px;margin:0 auto;background:#fff;padding:40px;border-radius:18px;box-shadow:0 14px 40px rgba(45,80,22,.14)}
+.quote-form .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:600px){.quote-form{padding:26px}.quote-form .row{grid-template-columns:1fr}}
+.quote-form label{font-weight:700;font-size:.9rem;color:var(--forest);display:block;margin-bottom:4px}
+.quote-form input[type=text],.quote-form input[type=tel],.quote-form input[type=email],.quote-form textarea{width:100%;padding:13px 14px;border:1.5px solid #d8cdb8;border-radius:8px;font-family:inherit;font-size:1rem;margin-bottom:16px}
+.quote-form input:focus,.quote-form textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,.25)}
+.quote-form textarea{resize:vertical;min-height:100px}
+.checklist{margin:6px 0 20px}
+.checklist .lbl{font-weight:700;color:var(--forest);margin-bottom:10px}
+.checks{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.check{display:flex;align-items:center;gap:9px;background:var(--cream);border:1.5px solid #e2d8c4;border-radius:8px;padding:11px 13px;cursor:pointer;transition:.2s;font-size:.93rem}
+.check:hover{border-color:var(--gold)}
+.check input{accent-color:var(--forest);width:17px;height:17px}
+.check.sel{border-color:var(--forest);background:#eef2e6}
+.form-note{font-size:.85rem;color:var(--earth);margin-top:14px;text-align:center}
+/* footer */
+footer{background:var(--forest-dark);color:var(--cream);padding:56px 24px 28px}
+.foot-grid{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:34px}
+footer h4{font-family:'Playfair Display',serif;color:var(--gold);margin-bottom:14px;font-size:1.2rem}
+footer p,footer a,footer li{color:#d8d0c2;font-weight:300;text-decoration:none;font-size:.92rem}
+footer ul{list-style:none}
+footer li{padding:4px 0}
+footer a:hover{color:var(--gold)}
+.foot-bottom{max-width:1140px;margin:40px auto 0;padding-top:22px;border-top:1px solid rgba(255,255,255,.12);text-align:center;font-size:.82rem;color:#b8b0a2}
+.foot-bottom .accent{color:var(--gold)}
+/* scroll animations */
+.anim{opacity:0;transition:opacity .8s ease,transform .8s ease}
+.anim.from-left{transform:translateX(-60px)}
+.anim.from-right{transform:translateX(60px)}
+.anim.from-bottom{transform:translateY(50px)}
+.anim.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.anim{opacity:1;transform:none}.scroll-hint,.sun{animation:none}}
+</style>
+</head>
+<body>
+<div class="demo-tag">Premium Tier Demo · Green Ridge Lawn &amp; Landscape</div>
+
+<nav id="nav">
+  <div class="logo">Green Ridge <span class="accent">L&amp;L</span></div>
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+  <ul id="menu">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#work">Our Work</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#quote" class="nav-cta">Free Quote</a></li>
+    <li><a href="../">All Demos</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="layer sky"></div>
+  <div class="sun" data-depth="0.15"></div>
+  <!-- far rolling hills -->
+  <div class="layer l-far" data-depth="0.25">
+    <svg viewBox="0 0 1440 240" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 240 L0 130 Q240 60 480 120 Q760 190 1000 110 Q1240 40 1440 120 L1440 240 Z" fill="#3f7a1f" opacity="0.85"/></svg>
+  </div>
+  <!-- mid hills -->
+  <div class="layer l-mid" data-depth="0.45">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 260 L0 150 Q300 80 620 150 Q900 210 1200 130 Q1340 95 1440 140 L1440 260 Z" fill="#2D5016"/></svg>
+  </div>
+  <!-- near grass blades -->
+  <div class="layer l-near" data-depth="0.7">
+    <svg viewBox="0 0 1440 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="120" width="1440" height="80" fill="#20380F"/>
+      <path d="M0 200 L0 130 Q20 60 40 130 Q60 50 80 130 Q100 70 120 130 Q140 55 160 130 Q180 65 200 130 Q220 50 240 130 Q260 70 280 130 Q300 55 320 130 Q340 65 360 130 Q380 50 400 130 Q420 70 440 130 Q460 55 480 130 Q500 65 520 130 Q540 50 560 130 Q580 70 600 130 Q620 55 640 130 Q660 65 680 130 Q700 50 720 130 Q740 70 760 130 Q780 55 800 130 Q820 65 840 130 Q860 50 880 130 Q900 70 920 130 Q940 55 960 130 Q980 65 1000 130 Q1020 50 1040 130 Q1060 70 1080 130 Q1100 55 1120 130 Q1140 65 1160 130 Q1180 50 1200 130 Q1220 70 1240 130 Q1260 55 1280 130 Q1300 65 1320 130 Q1340 50 1360 130 Q1380 70 1400 130 Q1420 55 1440 130 L1440 200 Z" fill="#2D5016"/>
+    </svg>
+  </div>
+  <div class="hero-content" id="heroContent" data-depth="0.1">
+    <h1>Landscapes That <span class="accent">Inspire</span></h1>
+    <p>Award-winning lawn care and bespoke landscape design that turn ordinary yards into extraordinary outdoor living spaces.</p>
+    <a class="btn" href="#quote">Request a Design Consultation</a>
+  </div>
+  <div class="scroll-hint">SCROLL ▾</div>
+</header>
+
+<div class="cut-divider"><div class="bar"></div></div>
+
+<!-- stats / counters -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat-grid">
+      <div class="stat anim from-bottom"><div class="num" data-count="1850">0</div><div class="label">Lawns Maintained</div></div>
+      <div class="stat anim from-bottom"><div class="num" data-count="187">0</div><div class="label">5-Star Reviews</div></div>
+      <div class="stat anim from-bottom"><div class="num" data-count="14">0</div><div class="label">Years in Business</div></div>
+      <div class="stat anim from-bottom"><div class="num" data-count="100">0</div><div class="label">% Satisfaction</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cut-divider"><div class="bar"></div></div>
+
+<!-- services flip cards -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head anim from-bottom">
+      <div class="lead">Full-Service Care</div>
+      <h2>Everything Your Landscape Needs</h2>
+      <p>Hover any card to see what's included. Seven core services, one trusted local team.</p>
+    </div>
+    <div class="flip-grid">
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 25h19v3H3zM5 25v-7h5v7M12 25v-10h5v10" stroke="#C9A84C" stroke-width="2.4"/><circle cx="8" cy="29" r="2.6" fill="#C9A84C"/><path d="M22 18l6-7h3" stroke="#C9A84C" stroke-width="2.4"/></svg></div><h3>Mowing</h3></div><div class="flip-face flip-back"><h3>Mowing</h3><p>Precision weekly cuts with striping patterns, blade-height tuning, and clipping management for a flawless finish.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 24h26" stroke="#C9A84C" stroke-width="2.4"/><path d="M7 24v-5M12 24v-8M17 24v-6M22 24v-9M27 24v-5" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/></svg></div><h3>Edging</h3></div><div class="flip-face flip-back"><h3>Edging &amp; Trimming</h3><p>Crisp mechanical edging along every walk, drive, and bed plus detailed string-trimming around all obstacles.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 5c-5 6-7 11-7 15a7 7 0 0014 0c0-4-2-9-7-15z" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg></div><h3>Fertilization</h3></div><div class="flip-face flip-back"><h3>Fertilization &amp; Weed Control</h3><p>Custom-blended seasonal programs, soil testing, aeration, and targeted weed and grub control.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="17" cy="20" r="8" stroke="#C9A84C" stroke-width="2.4"/><path d="M17 5v7M11 9l3 4M23 9l-3 4" stroke="#C9A84C" stroke-width="2.2" stroke-linecap="round"/></svg></div><h3>Irrigation</h3></div><div class="flip-face flip-back"><h3>Irrigation Systems</h3><p>Smart sprinkler design, installation, seasonal start-up &amp; winterization, and water-saving controller upgrades.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="16" width="8" height="8" stroke="#C9A84C" stroke-width="2.2"/><rect x="16" y="16" width="8" height="8" stroke="#C9A84C" stroke-width="2.2"/><rect x="11" y="8" width="8" height="8" stroke="#C9A84C" stroke-width="2.2"/></svg></div><h3>Hardscaping</h3></div><div class="flip-face flip-back"><h3>Hardscaping</h3><p>Paver patios, retaining walls, walkways, and fire features built to last and designed to elevate your yard.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 26c-6-3-9-7-9-12 0-3 2-5 5-5 2 0 3 1 4 3 1-2 2-3 4-3 3 0 5 2 5 5 0 5-3 9-9 12z" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg></div><h3>Design</h3></div><div class="flip-face flip-back"><h3>Landscape Design</h3><p>Full 3D design consultations, native planting plans, and seasonal color schemes tailored to your property.</p></div></div></div>
+      <div class="flip anim from-bottom" tabindex="0"><div class="flip-inner"><div class="flip-face flip-front"><div class="icon"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 5v15M17 20l-5-4M17 20l5-4" stroke="#C9A84C" stroke-width="2.4" stroke-linecap="round"/><path d="M7 24l3 5h14l3-5" stroke="#C9A84C" stroke-width="2.4" stroke-linejoin="round"/></svg></div><h3>Cleanup</h3></div><div class="flip-face flip-back"><h3>Seasonal Cleanup</h3><p>Spring &amp; fall refreshes, leaf and debris removal, mulch installation, and complete bed maintenance.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="cut-divider"><div class="bar"></div></div>
+
+<!-- before / after -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head anim from-bottom">
+      <div class="lead">The Green Ridge Difference</div>
+      <h2>Before &amp; After</h2>
+      <p>Drag the slider to see one of our recent lawn renovations.</p>
+    </div>
+    <div class="ba-wrap anim from-bottom">
+      <div class="ba-img">
+        <div class="ba-before"><div class="ba-patches"></div></div>
+        <div class="ba-after" id="baAfter"></div>
+        <div class="ba-handle" id="baHandle"><div class="grip">⇄</div></div>
+        <input class="ba-range" id="baRange" type="range" min="0" max="100" value="50" aria-label="Before and after slider"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cut-divider"><div class="bar"></div></div>
+
+<!-- testimonials carousel -->
+<section class="testimonials" id="testimonials">
+  <div class="wrap">
+    <div class="section-head anim from-bottom">
+      <div class="lead">Trusted Locally</div>
+      <h2>What Our Clients Say</h2>
+    </div>
+    <div class="carousel anim from-bottom">
+      <div class="track" id="track">
+        <div class="slide"><div class="stars">★★★★★</div><p>"Green Ridge redesigned our entire backyard — new patio, beds, the works. It feels like a resort now. Truly premium service from start to finish."</p><div class="who">— The Hendersons, Cedar Hollow</div></div>
+        <div class="slide"><div class="stars">★★★★★</div><p>"Their crew is meticulous. The lawn has never looked healthier and the striping is gorgeous. Worth every dollar."</p><div class="who">— Daniel K., Riverside</div></div>
+        <div class="slide"><div class="stars">★★★★★</div><p>"From the 3D design consult to the finished hardscape, the whole experience was seamless and professional. Highly recommend."</p><div class="who">— Aisha M., Maple Grove</div></div>
+      </div>
+      <div class="carousel-btns"><button id="prev" aria-label="Previous review">‹</button><button id="next" aria-label="Next review">›</button></div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+</section>
+
+<div class="cut-divider"><div class="bar"></div></div>
+
+<!-- quote form with checklist -->
+<section class="quote" id="quote">
+  <div class="wrap">
+    <div class="section-head anim from-bottom">
+      <div class="lead">Start Your Project</div>
+      <h2>Request a Free Quote</h2>
+      <p>Pick the services you're interested in and tell us about your vision.</p>
+    </div>
+    <form class="quote-form anim from-bottom" onsubmit="event.preventDefault(); this.reset(); document.querySelectorAll('.check').forEach(function(c){c.classList.remove('sel')}); document.getElementById('qMsg').textContent='Thank you! This is a demo form — no request was actually sent.';">
+      <div class="row">
+        <div><label for="qname">Full Name</label><input id="qname" type="text" placeholder="Your name" required/></div>
+        <div><label for="qphone">Phone</label><input id="qphone" type="tel" placeholder="(555) 123-4567" required/></div>
+      </div>
+      <div class="row">
+        <div><label for="qemail">Email</label><input id="qemail" type="email" placeholder="you@email.com" required/></div>
+        <div><label for="qaddr">Property Address</label><input id="qaddr" type="text" placeholder="Street, City"/></div>
+      </div>
+      <div class="checklist">
+        <div class="lbl">Services of Interest</div>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="svc" value="Mowing"/> Mowing</label>
+          <label class="check"><input type="checkbox" name="svc" value="Edging"/> Edging &amp; Trimming</label>
+          <label class="check"><input type="checkbox" name="svc" value="Fertilization"/> Fertilization</label>
+          <label class="check"><input type="checkbox" name="svc" value="Irrigation"/> Irrigation</label>
+          <label class="check"><input type="checkbox" name="svc" value="Hardscaping"/> Hardscaping</label>
+          <label class="check"><input type="checkbox" name="svc" value="Design"/> Landscape Design</label>
+          <label class="check"><input type="checkbox" name="svc" value="Cleanup"/> Seasonal Cleanup</label>
+        </div>
+      </div>
+      <div><label for="qmsg">Project Details</label><textarea id="qmsg" placeholder="Tell us about your property and goals…"></textarea></div>
+      <button class="btn" type="submit" style="width:100%">Send My Request</button>
+      <div class="form-note" id="qMsg">Demo form — submissions are not stored.</div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div>
+      <h4>Green Ridge L&amp;L</h4>
+      <p>Premium lawn care and landscape design serving Cedar Hollow and the surrounding communities since 2012.</p>
+    </div>
+    <div>
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#services">Mowing &amp; Edging</a></li>
+        <li><a href="#services">Fertilization</a></li>
+        <li><a href="#services">Irrigation</a></li>
+        <li><a href="#services">Hardscaping</a></li>
+        <li><a href="#services">Landscape Design</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+        <li><a href="mailto:hello@greenridgelawn.com">hello@greenridgelawn.com</a></li>
+        <li>142 Orchard Lane</li>
+        <li>Cedar Hollow, OH 45040</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Hours</h4>
+      <ul>
+        <li>Mon–Fri: 7am – 6pm</li>
+        <li>Saturday: 8am – 2pm</li>
+        <li>Sunday: Closed</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>&copy; 2026 <span class="accent">Green Ridge Lawn &amp; Landscape</span>. All rights reserved. · <a href="../" style="color:inherit;text-decoration:underline">View other demo tiers</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var nav=document.getElementById("nav"),burger=document.getElementById("hamburger"),menu=document.getElementById("menu");
+// sticky nav color change
+function onScroll(){if(window.scrollY>60)nav.classList.add("scrolled");else nav.classList.remove("scrolled");}
+window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+// hamburger
+burger.addEventListener("click",function(){var o=nav.classList.toggle("open");burger.setAttribute("aria-expanded",o?"true":"false");});
+menu.addEventListener("click",function(e){if(e.target.tagName==="A"){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");}});
+// parallax hero
+var layers=document.querySelectorAll(".hero [data-depth]"),reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if(!reduce){window.addEventListener("scroll",function(){var y=window.scrollY;if(y>window.innerHeight)return;for(var i=0;i<layers.length;i++){var d=parseFloat(layers[i].getAttribute("data-depth"));layers[i].style.transform="translateY("+(y*d)+"px)";}},{passive:true});}
+// checklist toggle styling
+document.querySelectorAll(".check input").forEach(function(cb){cb.addEventListener("change",function(){this.closest(".check").classList.toggle("sel",this.checked);});});
+// before/after slider
+var range=document.getElementById("baRange"),after=document.getElementById("baAfter"),handle=document.getElementById("baHandle");
+function setBA(v){after.style.clipPath="inset(0 "+(100-v)+"% 0 0)";handle.style.left=v+"%";}
+range.addEventListener("input",function(){setBA(this.value);});setBA(50);
+// testimonials carousel
+var track=document.getElementById("track"),slides=track.children,dots=document.getElementById("dots"),idx=0,timer;
+for(var s=0;s<slides.length;s++){(function(i){var d=document.createElement("span");if(i===0)d.className="active";d.addEventListener("click",function(){go(i);});dots.appendChild(d);})(s);}
+function go(i){idx=(i+slides.length)%slides.length;track.style.transform="translateX("+(-idx*100)+"%)";var ds=dots.children;for(var k=0;k<ds.length;k++)ds[k].className=k===idx?"active":"";reset();}
+function reset(){clearInterval(timer);timer=setInterval(function(){go(idx+1);},6000);}
+document.getElementById("next").addEventListener("click",function(){go(idx+1);});
+document.getElementById("prev").addEventListener("click",function(){go(idx-1);});
+reset();
+// scroll animations + counters + cut dividers
+var anims=document.querySelectorAll(".anim"),cuts=document.querySelectorAll(".cut-divider"),counters=document.querySelectorAll("[data-count]");
+function runCounter(el){var target=parseInt(el.getAttribute("data-count"),10),start=null,dur=1600;function step(t){if(!start)start=t;var p=Math.min((t-start)/dur,1);el.textContent=Math.floor(p*target).toLocaleString();if(p<1)requestAnimationFrame(step);else el.textContent=target.toLocaleString();}requestAnimationFrame(step);}
+if(!("IntersectionObserver"in window)){anims.forEach(function(e){e.classList.add("show");});cuts.forEach(function(e){e.classList.add("cut");});counters.forEach(runCounter);}else{
+var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("show");if(en.target.querySelector){var c=en.target.querySelector("[data-count]");if(c&&!c.dataset.done){c.dataset.done="1";runCounter(c);}}io.unobserve(en.target);}});},{threshold:.2});
+anims.forEach(function(e){io.observe(e);});
+var cio=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("cut");cio.unobserve(en.target);}});},{threshold:.4});
+cuts.forEach(function(e){cio.observe(e);});
+}
+})();
+</script>
+</body>
+</html>
